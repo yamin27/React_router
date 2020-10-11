@@ -13,6 +13,15 @@
   }
 }
 
+.TextStyle {
+
+  background-color: green;
+  color: red;
+  margin: 30px;
+  padding: 40px;
+
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
