@@ -3,6 +3,15 @@ import axios from 'axios';
 
 class CountryList extends Component {
 
+    constructor(props) {
+        super(props);
+
+        this.state={
+
+            mydata: []
+
+        }
+    }
 
 
     componentDidMount() {
@@ -11,6 +20,7 @@ class CountryList extends Component {
             .then(response=>{
 
                 console.log(response.data)
+                this.setState({mydata: response.data})
 
             })
             .catch(error=>{
@@ -24,9 +34,18 @@ class CountryList extends Component {
 
 
     render() {
+
+        const myList= this.state.mydata
+
+       const CountryName= myList.map((myList)=>{
+
+            return <li>{myList.name}</li>
+
+        })
+
         return (
             <div>
-
+                <ul>{CountryName}</ul>
             </div>
         );
     }
